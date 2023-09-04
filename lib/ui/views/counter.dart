@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:test_app/cubits/counter_cubit.dart';
+
+import '../../cubits/index.dart';
 
 class Counter extends StatelessWidget {
   const Counter({super.key});

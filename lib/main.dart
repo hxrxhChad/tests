@@ -1,10 +1,17 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:test_app/cubits/counter_cubit.dart';
-import 'package:test_app/ui/views/counter.dart';
+import 'package:test_app/firebase_options.dart';
 
-void main() {
+import 'cubits/index.dart';
+import 'ui/views/index.dart';
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const TestApp());
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 }
 
 class TestApp extends StatelessWidget {
@@ -24,3 +31,5 @@ class TestApp extends StatelessWidget {
     );
   }
 }
+
+// so, we have successfully configured the Firebase into our Flutter App...
